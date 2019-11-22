@@ -1,26 +1,25 @@
-.jumbotron {
-  background-image: url("../img/burgerImg.jpg");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-color: #000000;
-  color: #ffffff;
-  margin-top: 3%;
-}
+
 .container {
-  color: RED;
+  background-color: moccasin;
+  color: rgb(41, 35, 1);
 }
-#newBurger {
-  color: #5c5c5c;
+
+.jumbotron {
+  background-color: #814a4a;
+  color: black;
+  margin-top: 3%;
+  text-align: center;
 }
+
 #leftSide {
-  background-color: #5c5c5c;
-  color: rgb(241, 90, 90);
+  background-color: #b38545;
+  color: rgb(53, 11, 11);
   text-align: center;
   font-size: 1.3em;
 }
 #rightSide {
-  background-color: #e49322;
-  color: rgb(221, 38, 38);
+  background-color: #b38545;
+  color: rgb(53, 11, 11);
   text-align: center;
   font-size: 1.3em;
 }
