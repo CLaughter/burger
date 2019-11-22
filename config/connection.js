@@ -14,7 +14,6 @@ connection.connect(function(err) {
     console.error("error connecting: " + err.stack);
     return;
   } else {
-  console.log("yo");
   console.log("connected as id " + connection.threadId);
   };
 });
