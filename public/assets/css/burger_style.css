@@ -1,0 +1,26 @@
+.jumbotron {
+  background-image: url("../img/burgerImg.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 3%;
+}
+.container {
+  color: RED;
+}
+#newBurger {
+  color: #5c5c5c;
+}
+#leftSide {
+  background-color: #5c5c5c;
+  color: rgb(241, 90, 90);
+  text-align: center;
+  font-size: 1.3em;
+}
+#rightSide {
+  background-color: #e49322;
+  color: rgb(221, 38, 38);
+  text-align: center;
+  font-size: 1.3em;
+}

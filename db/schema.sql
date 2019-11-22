@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS EatDaBurgerDB;
+CREATE DATABASE EatDaBurgerDB;
+USE EatDaBurgerDB;
+
+CREATE TABLE burgers (
+  id INT NOT NULL AUTO_INCREMENT,
+  burger_name VARCHAR (50) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  devoured BOOLEAN DEFAULT false,
+  PRIMARY KEY (id)
+);
