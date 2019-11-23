@@ -1,4 +1,4 @@
-USE EatDaBurgerDB;
+USE EatDaBurgerdb;
 INSERT INTO burgers (burger_name, price, devoured)
 VALUES 
 ('Cheese Burger', 6.50, false),
