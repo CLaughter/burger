@@ -34,7 +34,7 @@ function objToSql(ob) {
 // Object for all our SQL statement functions
 var orm = {
   selectAll: function(table, cb) {
-    // console.log(table);
+    console.log(table);
     var queryString = `SELECT * FROM ${table}`;
 
     connection.query(queryString, function(err, res) {
@@ -47,7 +47,7 @@ var orm = {
   },
   
   insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+    var queryString = `INSERT INTO ${table}`;
 
     queryString += " (";
     queryString += cols.toString();
@@ -65,7 +65,7 @@ var orm = {
   },
 
   updateOne: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+    var queryString = `UPDATE ${table}`;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -84,7 +84,7 @@ var orm = {
   },
 
   deleteOne: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
+    var queryString = `DELETE FROM ${table}`;
 
     queryString += " WHERE ";
     queryString += condition;
