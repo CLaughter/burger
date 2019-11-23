@@ -5,8 +5,10 @@
 }
 
 .jumbotron {
-  background-color: #814a4a;
-  color: black;
+  background-image: url("../img/burgerImg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ff00d4 ;
   margin-top: 3%;
   text-align: center;
 }
