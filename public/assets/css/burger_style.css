@@ -8,9 +8,27 @@
   background-image: url("../img/burgerImg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  color: #ff00d4 ;
   margin-top: 3%;
   text-align: center;
+  opacity: 0.4;
+}
+
+#glow {
+  font-size: 50px;
+  color: rgb(243, 34, 191);
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #9e0685, 0 0 40px #9e0685, 0 0 50px #9e0685, 0 0 60px #9e0685, 0 0 70px #9e0685;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #462234, 0 0 40px #462234, 0 0 50px #462234, 0 0 60px #462234, 0 0 70px #462234, 0 0 80px #462234;
+  }
 }
 
 #leftSide {
