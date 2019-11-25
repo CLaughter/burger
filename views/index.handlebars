@@ -13,9 +13,12 @@
               <option value="CheeseBurger">Cheese Burger</option>
               <option value="MaxBurger">Max Burger</option>
               <option value="TeriBurger">Teriyaki Burger</option>
+              <option value="Colossal">2 Pound Colossal</option>
+              <option value="VeggieBurger">Veggie Burger</option>
+              <option value="NotReal">Not Real Meat Burger</option>
             </select>
 
-          <button type="submit" class="btn btn-success" id="addBurger">
+          <button type="submit" class="btn btn-success" id="placeOrder">
             <span class="fa fa-thumbs-up"></span>
           </button>
         </div>
@@ -27,25 +30,52 @@
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading" id="leftSide"><strong>Order Awesomeness</strong>
-          <p>Send order to cashier when ready for pick up</p>
+          <p>Click "Order" to send to cashier when ready for pick up</p>
         </div>
         <div class="panel-body">
-          <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
-              <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-              <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
-              <span class="fa fa-usd"></span>
-              </button>
-              <span><strong>{{this.price}}</strong></span>
-              <hr>
-            {{/unless}}
-            {{/each}}
-          </ul>
+          <div>
+            <ul>
+              {{#each burgers}}
+              {{#unless addCheese}}              
+                {{> burgers/burger-block addCheese=true}}
+              {{!-- {{#unless devoured}}
+                <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
+                <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
+                <span class="fa fa-usd"></span>
+                </button>
+                <span><strong>{{this.price}}</strong></span>
+                <hr>
+              {{/unless}} --}}
+              {{/unless}}
+              {{/each}}
+            </ul>
+                        <ul>
+              {{#each burgers}}
+              {{#if removeCheese}}              
+                {{> burgers/burger-block removeCheese=true}}
+              {{!-- {{#unless devoured}}
+                <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
+                <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
+                <span class="fa fa-usd"></span>
+                </button>
+                <span><strong>{{this.price}}</strong></span>
+                <hr>
+              {{/unless}} --}}
+              {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+    <div class="col-sm-6">
+      <p id="total">Awesomeness Total:</p>
+    </div>
+    <div class="col-sm-3">
+      <button type="submit">Order</button>
+    </div>
+    <br>          
         </div>
       </div>
     </div>
-
+    
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading" id="rightSide"><strong>Burger is Ready for Pick Up</strong>
@@ -55,15 +85,20 @@
           <ul>
             {{#each burgers}}
             {{#if devoured}}
-              <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+              {{> burgers/burger-block delete=true}}            
+              {{!-- <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
               <button type="button" class="trashBurger btn btn-danger" id="trashButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
               <span class="fa fa-trash"></span></button>
-              <span><strong>{{this.price}}</strong></span>
+              <span><strong>{{this.price}}</strong></span> --}}
               <hr>
             {{/if}}
             {{/each}}
           </ul>
         </div>
+        <div class="col-sm-3"></div>
+          <button type="submit">Devoured</button>
+        </div>
+        <BR><BR>
       </div>
     </div>
   </div>

@@ -1,9 +1,13 @@
 <li>
   {{burger_name}}
 
-  <button class="change-order" data-id="{{id}}" data-neworder="{{order}}">
-    {{#if order}}ORDER{{else}}CANCEL{{/if}}
+  <button class="addCheese" data-id="{{cheese}}" data-noCheese="{{cheese}}">
+    {{#if addCheese}}No Cheese{{else}}Add Cheese{{/if}}
   </button>
 
-  <button class="delete-burger" data-id="{{this.id}}">DEVOURED</button>
+  <button class="removeCheese" data-id="{{cheese}}" data-cheese="{{cheese}}">
+  {{#if removeCheese}}Add Cheese{{else}}No Cheese{{/if}}
+  </button>  
+
+  <button class="delete-burger" data-id="{{this.id}}">Delete</button>
 </li>
