@@ -42,15 +42,6 @@ $(function() {
         location.reload();
       }
     );
-
-
-    // $.ajax("/api/burgers", {
-    //   type: "POST",
-    //   data: newBurger
-    // }).then(function() {
-    //   console.log("Added new burger");
-    //   location.reload();
-    // });
   });
 
   $(".eatBurger").on("click", function(event) {
@@ -60,25 +51,16 @@ $(function() {
     var devouredState = {
       devoured: 1
     };
+  });
 
-    // Send the PUT request
-    // $.ajax("/api/burgers/" + id, {
-    //   type: "PUT",
-    //   data: devouredState
-    // }).then(function() {
-    //   console.log("Burger devoured");
-    //   location.reload();
-    });
-  // });
-
-  $(".trashBurger").on("click", function(event) {
+  $(".delete-burger").on("click", function(event) {
     event.preventDefault();
-
+console.log("devoure burger with id: " + id);
     var id = $(this).data("id");
 
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
+      type: "PUT"
     }).then(
       function() {
         console.log("deleted burger", id);
@@ -86,11 +68,5 @@ $(function() {
         location.reload();
       }
     );
-
-
-    // $.ajax({
-    //   type: "DELETE",
-    //   url: "/api/burgers/" + id
-    // }).then(location.reload());
   });
 });

@@ -36,16 +36,8 @@
           <div>
             <ul>
               {{#each burgers}}
-              {{#unless addCheese}}              
+              {{#unless devoured}}              
                 {{> burgers/burger-block addCheese=true}}
-              {{!-- {{#unless devoured}}
-                <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-                <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
-                <span class="fa fa-usd"></span>
-                </button>
-                <span><strong>{{this.price}}</strong></span>
-                <hr>
-              {{/unless}} --}}
               {{/unless}}
               {{/each}}
             </ul>
@@ -53,20 +45,15 @@
               {{#each burgers}}
               {{#if removeCheese}}              
                 {{> burgers/burger-block removeCheese=true}}
-              {{!-- {{#unless devoured}}
-                <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-                <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
-                <span class="fa fa-usd"></span>
-                </button>
-                <span><strong>{{this.price}}</strong></span>
-                <hr>
-              {{/unless}} --}}
               {{/if}}
               {{/each}}
             </ul>
           </div>
     <div class="col-sm-6">
       <p id="total">Awesomeness Total:</p>
+        {{#each burgers}}
+
+        {{/each}}
     </div>
     <div class="col-sm-3">
       <button type="submit">Order</button>
@@ -85,11 +72,7 @@
           <ul>
             {{#each burgers}}
             {{#if devoured}}
-              {{> burgers/burger-block delete=true}}            
-              {{!-- <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
-              <button type="button" class="trashBurger btn btn-danger" id="trashButton" data-id="{{this.id}}" data-newDevoured="{{devour}}">
-              <span class="fa fa-trash"></span></button>
-              <span><strong>{{this.price}}</strong></span> --}}
+              {{> burgers/burger-block delete=true}}
               <hr>
             {{/if}}
             {{/each}}
