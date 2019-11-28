@@ -1,13 +1,17 @@
 <li>
   {{burger_name}}
 
-  <button class="addCheese" data-id="{{cheese}}" data-noCheese="{{cheese}}">
-    {{#if addCheese}}No Cheese{{else}}Add Cheese{{/if}}
+  <button class="add-burger btn btn-success" data-id="{{id}}" data-burger_name>
+    {{#if add-burger}}Add{{else}}Delete{{/if}}
   </button>
 
-  <button class="removeCheese" data-id="{{cheese}}" data-cheese="{{cheese}}">
-  {{#if removeCheese}}Add Cheese{{else}}No Cheese{{/if}}
-  </button>  
-
-  <button class="delete-burger" data-id="{{this.id}}">Delete</button>
+  <button class="delete-burger btn btn-danger" data-id="{{this.id}}">
+    {{#if delete-burger}}Delete
+    {{/if}}
+  </button>
 </li>
+
+<button class="devoured btn btn-warning" data-id={{this.id}}>
+  {{#if devoured}}Devoured
+  {{/if}}
+</button>

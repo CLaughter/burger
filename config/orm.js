@@ -63,13 +63,13 @@ var orm = {
     });
   },
 
-  updateOne: function(table, objColVals, condition, cb) {
+  updateOne: function(table, objColVals, id, cb) {
     var queryString = `UPDATE ${table}`;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
+    queryString += " WHERE id = ";
+    queryString += id;
 
     console.log(queryString);
     connection.query(queryString, function(err, result) {
@@ -81,11 +81,12 @@ var orm = {
     });
   },
 
-  deleteOne: function(table, condition, cb) {
+  deleteOne: function(table, id, cb) {
     var queryString = `DELETE FROM ${table}`;
-    queryString += " WHERE ";
-    queryString += condition;
+    queryString += " WHERE id = ";
+    queryString += id;
 
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

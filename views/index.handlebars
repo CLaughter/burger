@@ -17,9 +17,9 @@
               <option value="VeggieBurger">Veggie Burger</option>
               <option value="NotReal">Not Real Meat Burger</option>
             </select>
-          <button type="submit" class="btn btn-success" id="placeOrder">
-            <span class="fa fa-thumbs-up"></span>
-          </button>
+            <button class="btn btn-success add-burger" data-id="{{id}}" data-burger_name>
+              Add
+            </button>
         </div>
       </form>
     </panel>
@@ -28,36 +28,25 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading" id="leftSide"><strong>Order Awesomeness</strong>
-          <p>Click "Order" to send to cashier when ready for pick up</p>
+        <div class="panel-heading" id="leftSide">
+          <strong>Current Orders</strong>
+          <p>Click "Devoured" once you've eaten</p>
         </div>
         <div class="panel-body">
           <div>
             <ul>
               {{#each burgers}}
-              {{#unless devoured}}              
-                {{> burgers/burger-block addCheese=true}}
-              {{/unless}}
-              {{/each}}
-            </ul>
-                        <ul>
-              {{#each burgers}}
-              {{#if removeCheese}}              
-                {{> burgers/burger-block removeCheese=true}}
-              {{/if}}
+                {{#unless devoured }}
+                  <li>
+                    {{burger_name}}
+                    <button class="devoured btn btn-warning" data-id={{id}}>
+                      Devoured
+                    </button>
+                  </li>
+                {{/unless}}
               {{/each}}
             </ul>
           </div>
-    <div class="col-sm-6">
-      <p id="total">Awesomeness Total:</p>
-        {{#each burgers}}
-
-        {{/each}}
-    </div>
-    <div class="col-sm-3">
-      <button type="submit">Order</button>
-    </div>
-    <br>          
         </div>
       </div>
     </div>
@@ -69,18 +58,18 @@
         </div>
         <div class="panel-body">
           <ul>
-            {{#each burgers}}
-            {{#if devoured}}
-              {{> burgers/burger-block delete=true}}
-              <hr>
-            {{/if}}
-            {{/each}}
+           {{#each burgers}}
+                {{#if devoured }}
+                  <li>
+                    {{burger_name}}
+                    <button class="deleteBurger btn btn-warning" data-id={{id}}>
+                      Delete
+                    </button>
+                  </li>
+                {{/if}}
+              {{/each}} 
           </ul>
         </div>
-        <div class="col-sm-3"></div>
-          <button type="submit">Devoured</button>
-        </div>
-        <BR><BR>
       </div>
     </div>
   </div>
