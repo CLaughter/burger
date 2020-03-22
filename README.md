@@ -1,4 +1,4 @@
-`https://claughter.github.io/burger/`
+https://claughter.github.io/burger/
 
 # Eat-Da-Burger!
 
